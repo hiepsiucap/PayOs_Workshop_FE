@@ -1,7 +1,28 @@
 /** @format */
 import cancel from "../assets/img/cancel.webp";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 export default function CancelPage() {
+  const [searchParams] = useSearchParams();
+  useEffect(() => {
+    const orderCode = searchParams.get("orderCode");
+    const id = searchParams.get("id");
+    const getData = async () => {
+      await fetch(
+        `${
+          import.meta.env.VITE_BACKEND_SERVERR
+        }/api/payment/deleteorder?id=${id}&orderCode=${orderCode}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    };
+    getData();
+  }, [searchParams]);
   return (
     <div className=" h-screen flex flex-col py-24 space-y-6 items-center">
       <img
