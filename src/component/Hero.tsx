@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react";
 import tag from "../assets/img/hero.png";
 export default function Hero() {
   return (

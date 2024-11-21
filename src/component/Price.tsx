@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import EachPrice from "./EachPrice";
 interface Price {
   _id: string;

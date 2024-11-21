@@ -26,8 +26,8 @@ interface OrderData {
 }
 export default function SuccessPage() {
   const [searchParams] = useSearchParams();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [copied, setCopied] = useState(false);
+
+  const [, setCopied] = useState(false);
 
   const handleCopy = (text: string) => {
     navigator.clipboard

@@ -26,7 +26,7 @@ interface Data {
 export default function Payment() {
   const [listSubscription, changeListSubscription] = useState<Price[]>([]);
   const [filterSubscription, changefilterSubscription] = useState<Price[]>([]);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   const [, setSelectedOption] = useState<string>("month");
   const [onChoose, setChoose] = useState<Price | null>(null);
   const [data, changeData] = useState<Data>({ name: "", email: "" });
