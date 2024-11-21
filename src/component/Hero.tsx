@@ -1,5 +1,5 @@
 /** @format */
-
+import { Link } from "react-router-dom";
 import tag from "../assets/img/hero.png";
 export default function Hero() {
   return (
@@ -12,9 +12,12 @@ export default function Hero() {
           các trò chơi do AI tạo ra. Trải nghiệm học thú vị, cá nhân hóa, giúp
           ghi nhớ từ hiệu quả.
         </div>
-        <div className="text-lg bg-primary w-fit rounded-xl text-white my-6 px-8 py-3">
+        <Link
+          to="https://flpayment.netlify.app/payment/673dbbd30aa76950d9bcdfb4"
+          className="text-lg bg-primary w-fit rounded-xl text-white my-6 px-8 py-3"
+        >
           Tham gia ngay
-        </div>
+        </Link>
       </div>
       <div className=" w-1/2">
         <img

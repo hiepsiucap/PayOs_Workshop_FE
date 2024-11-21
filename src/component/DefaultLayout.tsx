@@ -37,7 +37,7 @@ export default function DefaultLayout() {
         <div className=" flex space-x-6 font-poppins items-center">
           <Link to="/">Đăng nhập</Link>
           <Link
-            to="/"
+            to="https://flpayment.netlify.app/payment/673dbbd30aa76950d9bcdfb4"
             className=" bg-primary rounded-xl  text-white p-4 px-8"
           >
             Tham gia ngay
