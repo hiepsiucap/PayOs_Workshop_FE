@@ -8,11 +8,13 @@ export default function DefaultLayout() {
       <nav className="md:container  flex justify-between  pt-6 mx-auto">
         {" "}
         <div className=" flex  space-x-20">
-          <img
-            src={logo}
-            alt=""
-            className="h-16"
-          />
+          <Link to="/">
+            <img
+              src={logo}
+              alt=""
+              className="h-16"
+            />
+          </Link>
           <div className=" flex items-center font-poppins space-x-16">
             <Link
               to="/"

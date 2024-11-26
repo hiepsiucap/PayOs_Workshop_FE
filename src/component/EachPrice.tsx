@@ -56,7 +56,7 @@ export default function EachPrice({
         </div>
         <div className=" flex justify-center py-6">
           <Link
-            className=" mx-auto py-3 px-8 border-2 border-primary rounded-2xl  "
+            className=" mx-auto py-3 px-8 border-2 border-primary rounded-2xl  hover:scale-105  hover:bg-primary hover:border-gray-300 hover:text-white "
             to={`/payment/${sub._id}`}
           >
             Đăng kí ngay
