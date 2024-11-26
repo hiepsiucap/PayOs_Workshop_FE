@@ -214,7 +214,10 @@ export default function Payment() {
           alt=""
           className=" h-44 rounded-2xl w-full"
         />
-        <div className="flex md:hidden space-x-4 items-center justify-center pt-6 font-inter font-semibold">
+        <div className=" md:hidden font-semibold text-center pt-6 ">
+          Chọn gói đăng kí :
+        </div>
+        <div className="flex md:hidden space-x-4 items-center justify-center pt-2 font-inter font-semibold">
           <label className="flex items-center space-x-2">
             <input
               type="radio"
@@ -223,7 +226,7 @@ export default function Payment() {
               className="form-radio text-blue-600"
               onChange={() => setChoose(filterSubscription[0])}
             />
-            <span>Gói Trial</span>
+            <span> Trial</span>
           </label>
           <label className="flex items-center space-x-2">
             <input
@@ -233,7 +236,7 @@ export default function Payment() {
               className="form-radio text-blue-600"
               onChange={() => setChoose(filterSubscription[1])}
             />
-            <span>Gói Pro</span>
+            <span> Pro</span>
           </label>
           <label className="flex items-center space-x-2">
             <input
@@ -243,7 +246,7 @@ export default function Payment() {
               className="form-radio text-blue-600"
               onChange={() => setChoose(filterSubscription[2])}
             />
-            <span>gói Unlimited</span>
+            <span> Unlimited</span>
           </label>
         </div>
         <div className=" flex space-x-4 md:py-12 py-6 font-inter">
@@ -314,7 +317,7 @@ export default function Payment() {
               ).toLocaleString("vi-VN")}{" "}
               <span className=" text-gray-900 text-sm ">VNĐ</span>
             </p>
-            <div className=" absolute border  rounded-md text-green-600  right-1 bottom-2 text-xs py-1 px-2 bg-green-400 bg-opacity-20">
+            <div className=" absolute border  rounded-md md:text-green-600 text-green-800 left-1  md:right-1 -top-3 md:bottom-2 text-xs py-1 px-2 bg-green-400 bg-opacity-70 md:bg-opacity-20">
               save 5%
             </div>
           </button>
