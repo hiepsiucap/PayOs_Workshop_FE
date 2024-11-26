@@ -2,7 +2,7 @@
 
 import { createBrowserRouter, ScrollRestoration } from "react-router-dom";
 import { DefaultLayout } from "./component";
-import { HomePage, Payment, CancelPage, SuccessPage } from "./page";
+import { HomePage, Payment, CancelPage, SuccessPage, FailedPage } from "./page";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/cancel",
         element: <CancelPage></CancelPage>,
+      },
+      {
+        path: "/failed",
+        element: <FailedPage></FailedPage>,
       },
       {
         path: "/success/:id",
