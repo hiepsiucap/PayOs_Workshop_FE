@@ -7,6 +7,7 @@ import copy from "../assets/img/copy.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import pro from "../assets/img/pro.png";
+import { useNavigate } from "react-router-dom";
 interface Subscription {
   title: string;
   time: number;
@@ -26,7 +27,7 @@ interface OrderData {
 }
 export default function SuccessPage() {
   const [searchParams] = useSearchParams();
-
+  const navigate = useNavigate();
   const [, setCopied] = useState(false);
 
   const handleCopy = (text: string) => {
@@ -54,9 +55,12 @@ export default function SuccessPage() {
           },
         }
       );
-      const data = await reponse.json();
-
-      changeData(data);
+      if (reponse) {
+        const data = await reponse.json();
+        changeData(data);
+      } else {
+        navigate("/cancel");
+      }
     };
     getData();
   }, [searchParams]);

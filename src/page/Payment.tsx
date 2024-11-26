@@ -283,7 +283,7 @@ export default function Payment() {
               <span className=" text-gray-900 text-sm ">VNĐ</span>
             </p>
             <div className=" absolute border  rounded-md text-green-600  right-1 bottom-2 text-xs py-1 px-2 bg-green-400 bg-opacity-20">
-              save 20%
+              save 5%
             </div>
           </button>
         </div>
