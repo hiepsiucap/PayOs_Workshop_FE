@@ -1,6 +1,6 @@
 /** @format */
 import { Link } from "react-router-dom";
-import tag from "../assets/img/hero.png";
+import tag from "../assets/img/hero.webp";
 export default function Hero() {
   return (
     <div className=" md:container  mx-auto flex flex-col md:flex-row items-center">
