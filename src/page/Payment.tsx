@@ -317,7 +317,10 @@ export default function Payment() {
               ).toLocaleString("vi-VN")}{" "}
               <span className=" text-gray-900 text-sm ">VNĐ</span>
             </p>
-            <div className=" absolute border  rounded-md md:text-green-600 text-green-800 left-1  md:right-1 -top-3 md:bottom-2 text-xs py-1 px-2 bg-green-400 bg-opacity-70 md:bg-opacity-20">
+            <div className=" md:hidden absolute border  rounded-md md:text-green-600 text-green-800 left-1  md:right-1 -top-3   md:bottom-2 text-xs py-1 px-2 bg-green-400 bg-opacity-70 md:bg-opacity-20">
+              save 5%
+            </div>
+            <div className=" hidden md:block absolute border  rounded-md md:text-green-600 text-green-800   md:right-1   md:bottom-2 text-xs py-1 px-2 bg-green-400 bg-opacity-70 md:bg-opacity-20">
               save 5%
             </div>
           </button>
