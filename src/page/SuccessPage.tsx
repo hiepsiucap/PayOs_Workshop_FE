@@ -55,7 +55,7 @@ export default function SuccessPage() {
           },
         }
       );
-      if (reponse) {
+      if (reponse.ok) {
         const data = await reponse.json();
         changeData(data);
       } else {
