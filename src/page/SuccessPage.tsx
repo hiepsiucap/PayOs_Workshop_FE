@@ -59,7 +59,7 @@ export default function SuccessPage() {
         const data = await reponse.json();
         changeData(data);
       } else {
-        navigate("/cancel");
+        navigate("/failed");
       }
     };
     getData();
