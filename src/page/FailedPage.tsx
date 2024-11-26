@@ -3,13 +3,13 @@ import cancel from "../assets/img/cancel.webp";
 import { Link } from "react-router-dom";
 export default function FailedPage() {
   return (
-    <div className=" h-screen pt-44 flex flex-col py-24 space-y-6 items-center">
+    <div className=" h-screen pt-44 flex flex-col py-24 space-y-3 md:space-y-6 items-center">
       <img
         src={cancel}
         alt=""
         className=" w-24 h-24 animate-bounce"
       />
-      <p className=" font-poppins text-3xl ">
+      <p className=" font-poppins text-2xl md:text-3xl ">
         Lấy thông tin đơn hàng ko thành công{" "}
       </p>
       <div className=" py-8">

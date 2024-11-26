@@ -46,18 +46,19 @@ export default function Price() {
     getData();
   }, []);
   return (
-    <div className=" md:container font-inter mx-auto py-24">
+    <div className=" md:container font-inter mx-auto px-4 md:px-0 md:py-24 py-12">
       <div>
-        <div className=" text-4xl font-semibold text-center">
-          Chọn gói phù hợp, học tiếng Anh hiệu quả!
+        <div className=" md:text-4xl leading-normal md:leading-none  text-3xl font-semibold text-center">
+          Chọn gói phù hợp,<br className=" md:hidden"></br> học tiếng Anh hiệu
+          quả!
         </div>
         <div className=" text-gray-800 font-inter py-4 text-center text-xl">
           Phù hợp với mọi túi tiền
         </div>
       </div>
-      <div className="flex items-center  space-x-6">
-        <div className=" w-1/6">
-          <h5 className=" font-bold text-xl ">Chọn gói đăng kí </h5>
+      <div className="flex flex-col md:flex-row items-center  space-x-6">
+        <div className=" md:w-1/6 flex pb-6 md:pb-0  items-center space-x-4 md:block">
+          <h5 className=" font-bold md:text-xl ">Chọn gói đăng kí </h5>
           <div className="flex items-center space-x-2 mb-2 mt-4">
             <input
               type="radio"
@@ -76,7 +77,7 @@ export default function Price() {
             </label>
           </div>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 mb-2 mt-4 md:mb-2 md:mt-4">
             <input
               type="radio"
               id="year"
@@ -94,7 +95,7 @@ export default function Price() {
             </label>
           </div>
         </div>
-        <div className="grid grid-cols-3 grid-flow-col ">
+        <div className="grid md:grid-cols-3 md:grid-flow-col gap-y-5 ">
           {filterSubscription.length === 3 && (
             <>
               <EachPrice

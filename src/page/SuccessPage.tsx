@@ -43,52 +43,54 @@ export default function SuccessPage() {
   useEffect(() => {
     const orderCode = searchParams.get("orderCode");
     const id = searchParams.get("id");
-    const getData = async () => {
-      const reponse = await fetch(
-        `${
-          import.meta.env.VITE_BACKEND_SERVERR
-        }/api/payment/getorder?id=${id}&orderCode=${orderCode}`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
+    if (orderCode) {
+      const getData = async () => {
+        const reponse = await fetch(
+          `${
+            import.meta.env.VITE_BACKEND_SERVERR
+          }/api/payment/getorder?id=${id}&orderCode=${orderCode}`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        if (reponse.ok) {
+          const data = await reponse.json();
+          changeData(data);
+        } else {
+          // navigate("/failed");
         }
-      );
-      if (reponse.ok) {
-        const data = await reponse.json();
-        changeData(data);
-      } else {
-        navigate("/failed");
-      }
-    };
-    getData();
+      };
+      getData();
+    }
   }, [searchParams]);
   console.log(data);
   const notify = () => toast("Copy thành công");
 
   return (
-    <div className=" bg-slate-50 h-screen flex flex-col py-12 space-y-6 items-center">
+    <div className=" bg-slate-50 md:h-screen flex flex-col md:py-12 md:space-y-6 items-center">
       <ToastContainer />
       {data ? (
-        <section className=" bg-white py-6 font-poppins px-12 rounded-lg shadow-lg ">
+        <section className=" bg-white py-6 w-11/12 md:w-fit  font-poppins text-center  md:text-start md:px-12 rounded-lg shadow-lg ">
           <p className=" text-center font-poppins  text-3xl ">HOÁ ĐƠN</p>
-          <h4 className=" text-lg py-4 pt-6">Thông tin cá nhân</h4>
-          <div className="flex space-x-2 items-end ">
+          <h4 className=" text-lg md:py-4 md:pt-6 pt-4">Thông tin cá nhân</h4>
+          <div className="flex flex-col py-2 md:py-0 items-center md:flex-row space-x-2 md:items-end ">
             <p className=" text-sm  text-gray-700 w-40">Tên khách hàng:</p>
             <p className=" ">{data.name}</p>
           </div>
-          <div className="flex space-x-2 items-end ">
+          <div className="flex flex-col py-2 md:py-0 items-center space-x-2 md:flex-row md:items-end ">
             <p className=" text-sm  text-gray-700 w-40">Email khách hàng:</p>
             <p className=" ">{data.email}</p>
           </div>
-          <div className="flex space-x-2 items-end ">
+          <div className="flex flex-col py-2 md:py-0 items-center space-x-2 md:flex-row md:items-end ">
             <p className=" text-sm text-gray-700 w-40">Số hoá đơn:</p>
             <p className=" ">#{data.order._id}</p>
           </div>
-          <h4 className=" text-lg py-4 pt-6">Sản phẩm</h4>
-          <div className=" flex justify-between items-center space-x-32">
-            <div className=" flex items-center space-x-4">
+          <h4 className=" text-lg py-4 md:pt-6 ">Sản phẩm</h4>
+          <div className=" flex justify-center md:justify-between items-center space-x-32">
+            <div className=" flex flex-col md:flex-row items-center space-x-4">
               <img
                 src={pro}
                 alt=""
@@ -144,13 +146,13 @@ export default function SuccessPage() {
                 </div>
               </div>
             </div>
-            <p className=" font-semibold text-xl ">
+            <p className=" hidden md:block font-semibold text-xl ">
               {data.order.total.toLocaleString("vi-VN")} VNĐ
             </p>
           </div>
-          <div className=" w-full flex flex-col items-end pt-12   ">
+          <div className=" w-full flex flex-col items-center md:items-end md:pt-12 pt-6   ">
             <div className=" w-1/3 border "></div>
-            <div className=" flex items-end space-x-2 pt-8">
+            <div className=" flex items-end space-x-2 md:pt-8 pt-4">
               <p className=" text-gray-600 text-sm pb-1">Tổng tiền</p>
               <h4 className=" text-2xl font-poppins font-semibold">
                 {data.order.total.toLocaleString("vi-VN")} VNĐ
@@ -168,7 +170,7 @@ export default function SuccessPage() {
             alt=""
             className=" w-24 h-24 animate-bounce"
           />
-          <p className=" font-poppins text-3xl ">
+          <p className=" font-poppins text-2xl md:text-3xl ">
             Đơn hàng thanh toán thành công !{" "}
           </p>
           <div>

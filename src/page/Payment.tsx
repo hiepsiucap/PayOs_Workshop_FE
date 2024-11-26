@@ -107,8 +107,8 @@ export default function Payment() {
     }
   };
   return (
-    <div className=" md:container flex py-8 items-center space-x-8 w-full mx-auto  px-24">
-      <div className="flex flex-col space-y-4  h-5/6 w-5/12">
+    <div className=" md:container flex md:py-8 px-8  items-center md:space-x-8 w-full mx-auto  md:px-24">
+      <div className="hidden md:flex flex-col space-y-4  h-5/6 w-5/12">
         <Loading modalIsOpen={modalIsOpen}></Loading>
         {filterSubscription.length >= 3 && (
           <>
@@ -207,14 +207,46 @@ export default function Payment() {
       </div>
       <form
         onSubmit={onSubmit}
-        className=" bg-white w-7/12  rounded-2xl p-6 shadow-sm"
+        className=" bg-white md:w-7/12 w-full rounded-2xl p-6 shadow-sm"
       >
         <img
           src={checkout}
           alt=""
           className=" h-44 rounded-2xl w-full"
         />
-        <div className=" flex space-x-4 py-12 font-inter">
+        <div className="flex md:hidden space-x-4 items-center justify-center pt-6 font-inter font-semibold">
+          <label className="flex items-center space-x-2">
+            <input
+              type="radio"
+              name="option"
+              value="1"
+              className="form-radio text-blue-600"
+              onChange={() => setChoose(filterSubscription[0])}
+            />
+            <span>Gói Trial</span>
+          </label>
+          <label className="flex items-center space-x-2">
+            <input
+              type="radio"
+              name="option"
+              value="2"
+              className="form-radio text-blue-600"
+              onChange={() => setChoose(filterSubscription[1])}
+            />
+            <span>Gói Pro</span>
+          </label>
+          <label className="flex items-center space-x-2">
+            <input
+              type="radio"
+              name="option"
+              value="3"
+              className="form-radio text-blue-600"
+              onChange={() => setChoose(filterSubscription[2])}
+            />
+            <span>gói Unlimited</span>
+          </label>
+        </div>
+        <div className=" flex space-x-4 md:py-12 py-6 font-inter">
           <button
             type="button"
             onClick={() => {
