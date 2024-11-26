@@ -43,7 +43,7 @@ export default function SuccessPage() {
   useEffect(() => {
     const orderCode = searchParams.get("orderCode");
     const id = searchParams.get("id");
-    if (orderCode) {
+    if (orderCode && id) {
       const getData = async () => {
         const reponse = await fetch(
           `${
@@ -60,7 +60,7 @@ export default function SuccessPage() {
           const data = await reponse.json();
           changeData(data);
         } else {
-          // navigate("/failed");
+          navigate("/failed");
         }
       };
       getData();
