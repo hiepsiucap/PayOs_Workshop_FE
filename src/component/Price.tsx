@@ -56,7 +56,7 @@ export default function Price() {
           Phù hợp với mọi túi tiền
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center  space-x-6">
+      <div className="flex flex-col md:flex-row items-center  space-y-6">
         <div className=" md:w-1/6 flex pb-6 md:pb-0  items-center space-x-4 md:block">
           <h5 className=" font-bold md:text-xl ">Chọn gói đăng kí </h5>
           <div className="flex items-center space-x-2 mb-2 mt-4">
@@ -95,7 +95,7 @@ export default function Price() {
             </label>
           </div>
         </div>
-        <div className="grid md:grid-cols-3 md:grid-flow-col gap-y-5 ">
+        <div className="grid md:grid-cols-3 md:grid-flow-col gap-y-5  items-center ">
           {filterSubscription.length === 3 && (
             <>
               <EachPrice

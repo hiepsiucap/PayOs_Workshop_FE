@@ -22,8 +22,8 @@ export default function EachPrice({
       <div
         className={
           rounded
-            ? `rounded-l-2xl rounded-s-2xl shadow-md bg-white   p-8`
-            : " shadow-md bg-white   p-8"
+            ? ` rounded-2xl md:rounded-l-2xl md:rounded-s-2xl md:rounded-e-none md:rounded-t-none shadow-md bg-white   p-8`
+            : " shadow-md bg-white  rounded-2xl md:rounded-none   p-8"
         }
       >
         <h4 className=" font-bold text-2xl">{sub.title}</h4>
@@ -66,7 +66,9 @@ export default function EachPrice({
     );
   } else {
     return (
-      <div className={`rounded-2xl bg-black1 scale-105 text-white  p-8`}>
+      <div
+        className={`rounded-2xl bg-black1 scale-105 mt-4 md:mt-0 text-white  p-8`}
+      >
         <h4 className=" font-bold text-2xl text-primary">{sub.title}</h4>
         <h6 className=" font-semibold">{sub.description[0]}</h6>
         <div className=" flex space-x-2 py-3 pb-2 items-end  ">

@@ -70,7 +70,7 @@ export default function SuccessPage() {
   const notify = () => toast("Copy thành công");
 
   return (
-    <div className=" bg-slate-50 md:h-screen flex flex-col md:py-12 md:space-y-6 items-center">
+    <div className=" bg-slate-50 h-screen flex flex-col md:py-12 md:space-y-6 items-center">
       <ToastContainer />
       {data ? (
         <section className=" bg-white py-6 w-11/12 md:w-fit  font-poppins text-center  md:text-start md:px-12 rounded-lg shadow-lg ">
